@@ -1,21 +1,19 @@
 import sys
 input = sys.stdin.readline
-#피보나치 함수
-def fibonacci(n):
-    global zero_call, one_call
-    if n == 0 :
-        zero_call += 1
-        return 0
-    elif n == 1 :
-        one_call += 1
-        return 1
-    else :
-        return fibonacci(n - 2) + fibonacci(n - 1)
+
+fibo_list = [[0,0] for i in range(41)]
+fibo_list[0] = [1,0]
+fibo_list[1] = [0,1]
 #main
-zero_call = 0
-one_call = 0
-T = int(input())
+T = int(input()) #테스트케이스
 for i in range(T):
-    fibonacci(int(input()))
-    print(zero_call, one_call)
-    zero_call = 0; one_call = 0
+    i = 2
+    N = int(input()) #숫자
+    if(N <= 1):
+        print(fibo_list[N][0],fibo_list[N][1])
+    else :
+        while(i <= N):
+            fibo_list[i][0] = fibo_list[i - 2][0] + fibo_list[i - 1][0]
+            fibo_list[i][1] = fibo_list[i - 2][1] + fibo_list[i - 1][1]
+            i += 1
+        print(fibo_list[N][0],fibo_list[N][1])
