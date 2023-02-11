@@ -1,6 +1,7 @@
 import sys
 from collections import deque
 input = sys.stdin.readline
+
 def checking(PQ,target):
     count = 1
     while(PQ):
