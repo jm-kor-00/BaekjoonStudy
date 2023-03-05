@@ -10,6 +10,8 @@ for i in range(-1,N,3):
 #특정값안에서 반복
 for i in (1,3,7,8):
     print(i)
+
+#for-each문
 #리스트의 요소들로 반복:
 arr = ['a','b','c','d']
 for el in arr:
