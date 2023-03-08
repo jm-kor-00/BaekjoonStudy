@@ -13,6 +13,8 @@ while(i < N) :
         function[i + 1][index] = function[i][index - 1] + function[i][index + 1]
     i += 1
 sum = 0
+
 for el in function[N]:
     sum += el
+
 print(sum % 1000000000)

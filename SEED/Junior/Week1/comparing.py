@@ -1,0 +1,5 @@
+print(1 < 2)
+print("hello" == "hi")
+print(2.1 < 3)
+print(1.0 < 3)
+print("hello" < 3)
