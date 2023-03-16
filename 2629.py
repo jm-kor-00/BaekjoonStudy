@@ -1,8 +1,11 @@
 import sys
 input = sys.stdin.readline
 
+#추의 개수
 n = int(input())
+#추 오름차순 입력
 w_list = list(map(int,input().split()))
+#측정할 구슬의 개수
 m = int(input())
 m_list = list(map(int,input().split()))
 

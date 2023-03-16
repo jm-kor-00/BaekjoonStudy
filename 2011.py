@@ -17,8 +17,9 @@ else :
         DP[1] = 1
     if 10 <= Arr[0] * 10 + Arr[1] <= 26 : 
         DP[1] += 1
+        
     if Arr[0] * 10 + Arr[1] <= 9 :
-        DP[N-1] = 0
+        DP[1] = 0
     else :
         for i in range(2,N):
             if Arr[i] > 0 :
