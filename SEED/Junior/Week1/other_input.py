@@ -8,11 +8,10 @@
 # uni1, uni2, uni3 = map(str,input("대학교 이름을 쉼표로 구분해서 입력 : ").split(','))
 # print(uni1,uni2,uni3)
 
-#몇개가 입력될지모름;;
 #너, 시험점수 다 대봐
 # score = list(map(int,input("시험점수 다 입력해봐:").split()))
 # print(score)
 
 #너 친구이름 다 대봐
-friends = list(map(str,input("친구이름 다대봐 :").split()))
-print(friends)
+# friends = list(map(str,input("친구이름 다대봐 :").split()))
+# print(friends)
