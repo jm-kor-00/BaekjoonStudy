@@ -14,6 +14,7 @@ for wd in Words :
     for i in range(len(wd)):
         #가중치 ex) ABCD에서 A: 1000의 가중치
         tmp_val = 10 ** (len(wd) - 1 - i)
+        #해당 알파벳이 딕셔너리에 들어있는지 확인
         if wd[i] in DICT:
             DICT[wd[i]] += tmp_val #이미 있으면 value 수정
         else :
