@@ -5,7 +5,7 @@ N = int(input())
 table = []
 for i in range(N):
     s,e = map(int, input().split())
-    table.append([s,e])
+    table.append((s,e))
 
 count = 0 #회의 개수
 cur_end = 0 #현재까지 종료시간
