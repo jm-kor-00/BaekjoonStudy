@@ -10,24 +10,25 @@ for _ in range(int(input())):
 
 #입력받은 단어들에 대해
 for wd in Words :
-    #단어에 알파벳들에 대해
+    #단어의 문자들에 대해
     for i in range(len(wd)):
-        #가중치 ex) ABCD에서 A: 1000의 가중치
+        #가중치 ex) ABCD에서 A는 1000의 가중치를 가짐
         tmp_val = 10 ** (len(wd) - 1 - i)
+        #해당 알파벳이 딕셔너리에 들어있는지 확인
         if wd[i] in DICT:
             DICT[wd[i]] += tmp_val #이미 있으면 value 수정
         else :
             DICT[wd[i]] = tmp_val #아직 없으면 key:value 추가
-#키값들을 리스트로 변환
-VAL = list(DICT.values())
-#내림차순 정렬
-VAL.sort(reverse=True)
+#(1) 키값들을 리스트로 변환
+Values = list(DICT.values())
+#(2) 내림차순 정렬
+Values.sort(reverse=True)
 
-#9부터 1씩 감소하며 곱해준다
+#가중치 mul, 9부터 0까지 1씩 감소
 mul = 9
 #총합이 결과
 SUM = 0
-for el in VAL:
+for el in Values:
     SUM += el * mul
     mul -= 1
 #결과출력

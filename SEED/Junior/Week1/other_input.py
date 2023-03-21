@@ -12,10 +12,10 @@
 # print(uni1,uni2,uni3)
 
 # 너, 시험점수 다 대봐
-score = list( map(int,input("시험점수 다 입력해봐:").split()) )
-# 100 200 300 40 20 ...
-print(score)
+# score = list( map(int,input("시험점수 다 입력해봐:").split()) )
+# # 100 200 300 40 20 ...
+# print(score)
 
-# 너 친구이름 다 대봐
-friends = list(map(str,input("친구이름 다대봐 :").split()))
-print(friends)
+# # 너 친구이름 다 대봐
+# friends = list(map(str,input("친구이름 다대봐 :").split()))
+# print(friends)

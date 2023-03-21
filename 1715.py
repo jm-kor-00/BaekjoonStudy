@@ -13,7 +13,4 @@ while len(Deck) > 1 :
     result += tmp
     HQ.heappush(Deck,tmp)
 
-if result == 0:
-    print(0)
-else :
-    print(result)
+print(result)
