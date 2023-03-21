@@ -8,3 +8,4 @@ print("hello" < 3)
 #답없음
 #오류가 발생해요
 #어떤오류? 자료형 오류
+not (not (not true or not true))
