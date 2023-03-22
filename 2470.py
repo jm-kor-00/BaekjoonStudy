@@ -12,8 +12,6 @@ lowest = float('inf')
 
 pos = BS.bisect_left(arr,0)
 
-
-
 for i in range(pos + 1):
     partner = BS.bisect_left(arr[i+1:-1],-arr[i])
     tmp_sum = abs(arr[partner] + arr[i])
