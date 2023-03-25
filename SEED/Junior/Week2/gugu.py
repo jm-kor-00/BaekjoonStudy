@@ -1,3 +1,17 @@
-for i in range(1,3):
-    for j in range(1,10):
-        print(i,'X',j,"=",i * j)
+import random
+arr = []
+while(True):
+    tmp = input()
+    if tmp == 'q': break
+    arr.append(tmp)
+    
+count = 0
+while count < 6:
+    n = random.randrange(0,len(arr))
+    print("딸기 :",arr.pop(n))
+    count += 1
+
+while count < 12:
+    n = random.randrange(0,len(arr))
+    print("초코 :",arr.pop(n))
+    count += 1

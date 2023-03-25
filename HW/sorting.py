@@ -31,7 +31,7 @@ def bubble_sort(arr):
     print("결과 :",arr)
     print("연산 횟수 :",total)
 
-def my_sorting(arr):
+def my_sorting1(arr):
     total = 0
     print("정렬전 :",arr)
     # arr의 앞부분(0부터 len(arr) / 2 까지)을 확인
@@ -52,12 +52,30 @@ def my_sorting(arr):
     print("결과 :",arr)
     print("연산 횟수 :",total)
 
+def my_sorting2(arr):
+    total = 0
+    print("정렬전 :",arr)
+    for i in range(len(arr) // 2):
+        for j in range(len(arr) // 2):
+            total += 1 #비교연산
+            if arr[j] == 1:
+                total += 2 #삭제, 삽입연산
+                arr.pop(j)
+                arr.append(1)
+        print(i+1,"Step :",arr) #정렬과정 출력
+    print("결과 :",arr)
+    print("연산 횟수 :",total)
+
 #main
 if __name__ == "__main__":
-    arr1 = make_arr(8)
+    arr1 = make_arr(12)
     arr2 = deepcopy(arr1)
+    arr3 = deepcopy(arr1)
     print("***문제 설명에 나온 해결방법***\n")
     bubble_sort(arr1)
     print("====================================")
-    print("***내가 개선한 해결방법***\n")
-    my_sorting(arr2)
+    print("***내가 개선한 해결방법1***\n")
+    my_sorting1(arr2)
+    print("====================================")
+    print("***내가 개선한 해결방법2***\n")
+    my_sorting2(arr3)
