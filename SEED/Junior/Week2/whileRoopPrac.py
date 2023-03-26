@@ -10,4 +10,4 @@ while i < 10:
 #이럴땐 꼭 탈출 조건이 필요!
 while True :
     N = int(input('숫자입력 :'))
-    if N > 10 : break #얘는 뭐죠?
+    if N > 10 : break #
