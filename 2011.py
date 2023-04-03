@@ -12,7 +12,7 @@ if Arr[0] > 0 :
 #두번째 자리
 if N == 1:
     print(DP[0] % 1000000)
-else :
+else : # N이 2이상
     if Arr[1] > 0 :
         DP[1] = 1
     if 10 <= Arr[0] * 10 + Arr[1] <= 26 : 
