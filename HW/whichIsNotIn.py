@@ -8,14 +8,15 @@ def random_Exception(N):
 
     print("무작위로 제외된 숫자 : ",ex)
     print("배열 :",arr)
-    
     return arr
 
 #이진탐색을 활용한 매개변수탐색으로
 #제외된 숫자를 찾는 함수
+
 def findExcpetion(arr):
     left = 0
     right = len(arr) - 1
+    ans = len(arr)
     #이진탐색
     while left <= right :
         mid = (left + right) // 2
@@ -25,7 +26,8 @@ def findExcpetion(arr):
             ans = mid #정답갱신
             right = mid - 1 #큰 쪽 갱신
         else :
-            left = mid + 1 #작은 쪽 갱신
+            left = mid + 1#작은 쪽 갱신
+        print(left,right,mid)
     return ans + 1
 #main
 N = int(input('배열의 크기 :'))
