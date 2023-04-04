@@ -1,5 +1,5 @@
 import sys
-from collections import deque
+from collections import dequeb
 
 for _ in range(int(input())):
     cu = int(input())
