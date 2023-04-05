@@ -63,11 +63,11 @@ class Solution(object):
         # 4. 따라서, 찾아야 하는 median을 다음과 같이 정의할 수 있음.
 
         # 전체 크기 홀수의 경우,
-        # arr1[A + 1] or arr2[mid - A] : 둘 중에 작은 것이 mid+1 번째 숫자 이다.
+        # arr1[A + 1] or arr2[mid - A - 1] : 둘 중에 작은 것이 mid+1 번째 숫자 이다.
 
         # 전체 크기 짝수의 경우,
-        # arr1[A + 1] or arr2[mid - A] : 둘 중에 작은 것이 mid + 1 번째 숫자
-        # arr1[A] or arr2[mid - A - 1] : 둘 중에 큰 것이 mid 번째 숫자
+        # arr1[A + 1] or arr2[mid - A - 1] : 둘 중에 작은 것이 mid + 1 번째 숫자
+        # arr1[A] or arr2[mid - A - 2] : 둘 중에 큰 것이 mid 번째 숫자
 
         # 5. mid는 전체길이 // 2 이므로 A만 구하면 median을 구할 수 있음
         # A를 1씩 증가시키며 적합한 A가 무엇인지 찾으면 됨
@@ -184,8 +184,8 @@ class Solution(object):
             return sumOfMids / 2.0
 
 S = Solution()
-A = [1,3]
-B = [2]
+A = [1,2,3,4,5]
+B = []
 print("Arrays :",A,",",B)
 print("Trial1 median :",S.findMedian_BruteForce(A,B))
 print("Trial2 median :",S.findMedian_SearchShortArray(A,B))
