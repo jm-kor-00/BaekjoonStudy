@@ -45,7 +45,9 @@ if __name__ == "__main__":
     arr1 = [i for i in range(1,n+1)]
     
     random.shuffle(arr1)
+    arr1 = list("ALGORITHM")
     arr2 = deepcopy(arr1)
+    
     
     print("+++++++++++++++++++++++++++++++++++++++")
     print("[Bottom-Up 삽입정렬]\n")
