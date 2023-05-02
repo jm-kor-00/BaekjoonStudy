@@ -11,11 +11,13 @@ def createPairs(n):
 
     return sorted(arr,key=lambda point:point[0]) 
 
+#두 점사이의 거리 반환하는 함수
 def distance(p1,p2):
     x1,y1 = p1[0], p1[1]
     x2,y2 = p2[0], p2[1]
     return math.sqrt((x2-x1)**2 + (y2-y1)**2)
 
+#완전탐색으로 최근접쌍 거리 반환
 def closest_pair_bruteForce(P):
     MinDist = float('inf')
     for i in range(len(P)):
@@ -26,6 +28,7 @@ def closest_pair_bruteForce(P):
                     MinDist = tmp
     return MinDist
 
+#이미 오름차순 정렬되어있는 두 리스트를 병합하는 함수
 def merge(p1, p2, sort_key):
     key1 = 0
     key2 = 0
@@ -45,6 +48,7 @@ def merge(p1, p2, sort_key):
 
     return merged
 
+#띠구간에 대한 최근접쌍 거리를 반환
 def strip_closest(P,d):
     n = len(P)
     d_min = d
@@ -73,6 +77,7 @@ def closest_pair(P):
 
     return y_sorted, mindist
 
+#구현된 함수
 def closest_pair_dist(P,n):
     if n <= 3:
         return closest_pair(P)
