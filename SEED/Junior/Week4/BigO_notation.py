@@ -37,7 +37,7 @@ def gcd(a,b):
         if b % i == 0 :
             B.append(b)
     
-    gcd = 0
+    gcd = 1
     for i in range(len(A)):
         for j in range(len(B)):
             if A[i] == B[j]:
