@@ -45,8 +45,8 @@ def shift_table(pat):
     
     return tbl
 
-T = "aiflkngkngjlallkadlkasklaeflkafaa"
-P = "lkafffffff"
+T = "I_LOVE_BANANA_YOU_LIKE_APPLE_AND_MANGO"
+P = "GRAPE"
 
 print("검색 대상 :",T)
 print("찾는 문자열 :",P)
