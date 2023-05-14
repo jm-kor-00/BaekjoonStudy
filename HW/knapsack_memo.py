@@ -14,7 +14,6 @@ def knapsack(weights, values, capacity):
 
         # i번째 아이템을 선택하지 않을 경우
         exc_tmp = recursive_knapsack(i-1, remain_capacity)
-
         # i번째 아이템을 선택할 경우
         inc_tmp = 0
         if remain_capacity >= weights[i-1]:
@@ -24,5 +23,5 @@ def knapsack(weights, values, capacity):
         DP[i][remain_capacity] = max(exc_tmp, inc_tmp)
         return DP[i][remain_capacity]
 
-    # 재귀함수 호출
+    # 재귀 호출
     return recursive_knapsack(len(weights), capacity)
