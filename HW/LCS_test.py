@@ -2,9 +2,9 @@ from LCS_memo import lcs_memo
 from LCS_table import lcs_dp
 from LCS_traceback import lcs_dp_traceback
 
-X = "DATA STRUCTURE"
-Y = "PYTHON ALGORITHM"
-memo = {}
+X = "APPLE"
+Y = "ApP_A"
+memo = [[-1]*(len(X)+1) for _ in range(len(Y)+1)]
 print("======================================================")
 print("비교할 문자열\n")
 print("X :",X)

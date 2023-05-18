@@ -1,0 +1,20 @@
+def knapsack_memoization(weights, values, capacity):
+    n = len(weights)
+    memo = [[None for j in range(capacity + 1)] for i in range(n + 1)]
+    return knapsack_memoization_helper(weights, values, capacity, n, memo)
+
+def knapsack_memoization_helper(weights, values, capacity, n, memo):
+    if memo[n][capacity] is not None:
+        return memo[n][capacity]
+    
+    if n == 0 or capacity == 0:
+        result = 0
+    elif weights[n-1] > capacity:
+        result = knapsack_memoization_helper(weights, values, capacity, n-1, memo)
+    else:
+        include = values[n-1] + knapsack_memoization_helper(weights, values, capacity-weights[n-1], n-1, memo)
+        exclude = knapsack_memoization_helper(weights, values, capacity, n-1, memo)
+        result = max(include, exclude)
+    
+    memo[n][capacity] = result
+    return result
