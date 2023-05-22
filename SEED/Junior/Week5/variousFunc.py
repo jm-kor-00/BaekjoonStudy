@@ -1,7 +1,11 @@
 #조합으로 생성되는 부분집합을 구할 수 있는 함수
+
 from itertools import combinations
 #return_list = list(combinations(list,r))
 #nCr
+
+arr = [1,2,3,4,5]
+print(list(combinations(arr,3)))
 
 #순열 부분집합 구할 수 있는 함수
 from itertools import permutations
