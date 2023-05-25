@@ -30,7 +30,7 @@ Graph = [[0 for _ in range(N)]for _ in range(N)]
 for _ in range(int(input('간선의 개수 : '))):
     u, v = map(int,input('인접한 두 정점 입력 ex) 1 2 : ').split())
     u -= 1; v -= 1 #노드번호 맞추기 위해서 -1
-    # (u,v)&(v,u) 를 1로 초기화
+    # (u,v) & (v,u) 를 1로 초기화
     Graph[u][v] = 1
     Graph[v][u] = 1
 

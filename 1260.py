@@ -27,7 +27,7 @@ def BFS(V):
         for i in range(N):
             if graph[tmp][i] == 1 and not visited_BFS[i] :
                 que.append(i)
-                visited_BFS[i] = 1
+                visited_BFS[i] = True
     visited_BFS = [False] * N
 
 for i in range(M):
