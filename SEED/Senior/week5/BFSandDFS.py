@@ -2,8 +2,8 @@ from collections import deque
 
 #그래프, 시작노드
 def BFS(graph,V):
-    N = len(graph)
-    #각 노드 방문여부 나타내는 리스트
+    N = len(graph) #노드의 개수
+    #각 노드 방문여부  나타내는 리스트
     visited = [False] * N
 
     #시작노드 방문처리
@@ -30,14 +30,16 @@ def BFS(graph,V):
                 #노드 i 방문처리
                 visited[i] = True
 
+
+
 def DFS(graph, V):
     N = len(graph)
     #각 노드 방문여부 나타내는 리스트
     #visited에 삽입된 순서
     visited = [False] * N
-    visited[V] = True
 
     #시작노드 방문처리
+    visited[V] = True
 
     #스택 생성
     stack = deque()
