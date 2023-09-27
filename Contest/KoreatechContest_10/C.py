@@ -21,15 +21,18 @@ for _ in range(int(input())):
 
     while idx < W :
         if myOwn :
-            tmp = -1 * heapq.heappushpop(myOwn,-works[idx])
-            used -= tmp
+            used += works[idx]
+            biggest = -1 * heapq.heappushpop(myOwn,-works[idx])
+            used -= biggest
         else :
-            tmp = works[idx]
-        cmp = heapq.heappushpop(bootak,tmp)
-        heapq.heappush(myOwn, cmp)
-        used += cmp
+            biggest = works[idx]
+
+        tmp = heapq.heappushpop(bootak,biggest)
+        heapq.heappush(myOwn, -tmp)
+        
+        used += tmp
         if used > T :
             break
         idx += 1
 
-    print(idx - 1)
+    print(idx)

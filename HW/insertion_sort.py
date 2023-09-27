@@ -32,6 +32,7 @@ def insertion(key,arr):
     #step출력
     print("step %d:"%(len(arr)),arr)
     return arr
+
 #재귀호출로 삽입정렬을 수행하는 함수
 def insertion_Sort_TopDown(arr):
     if len(arr) == 0:

@@ -45,11 +45,12 @@ def shift_table(pat):
     
     return tbl
 
-T = "I_LOVE_BANANA_YOU_LIKE_APPLE_AND_MANGO"
-P = "GRAPE"
+T = "TTTTAATTASDAAAAATTT"
+P = "TCCTATTCTT"
 
 print("검색 대상 :",T)
 print("찾는 문자열 :",P)
+print(shift_table(P))
 print("===========================================")
 print("억지 기법 문자열 탐색 결과")
 print("위치 ",bruteforce_string_search(T,P))

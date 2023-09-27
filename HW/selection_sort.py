@@ -9,5 +9,6 @@ def selection_sort(A):
 
     return A
 
-A = [1,4,4,7,21,8,1]
-print(selection_sort(A))
+if __name__ == "__main__":
+    A = [1,4,4,7,21,8,1]
+    print(selection_sort(A))
