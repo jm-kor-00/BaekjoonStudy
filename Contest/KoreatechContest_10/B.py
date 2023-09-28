@@ -1,11 +1,14 @@
 import sys
 input = sys.stdin.readline
 
-def getFlipCount(a,b,c):
+#이걸 모르면
+#이진수로 만드는 함수 만들고, 각 자리 비교하는 방식을 써야 됨
+
+def getFlipCount(a:int,b:int,c:int)->int:
     cnt = 0
     #정수의 최대 크기를 고려
     for i in range(0,32):
-        pos = 1 << i
+        pos = 1 << i #시프트로 비트 위치를 맞춤
         tmp = c & pos
         if tmp == 0:
             if a & pos :

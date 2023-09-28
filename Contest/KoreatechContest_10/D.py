@@ -29,25 +29,27 @@ for _ in range(int(input())):
     start = int(input())
     dest = int(input())
 
-    busDict = {}
-    visited = {}
+    busDict = {} #노선 표시할 딕셔너리
+    visited = {} #방문여부 표시할 딕셔너리
 
     for i in range(len(line)):
         for el in line[i]:
-            visited[el] = False
+            visited[el] = False #그냥 반복문 돌리는 김에 visited도 돌림
             if el in busDict:
                 busDict[el].append(i)
             else :
                 busDict[el] = [i]
+
     # print(line)
     # print(busDict)
     # print(visited)
 
+    #출발도착 일치
     if start == dest :
         print(0)
+    #출발지가 노선에 없을 경우
     elif not start in busDict:
         print(-77)
+
     else :
         print(BFS(start,dest,visited,line,busDict))
-        
-    # for key
