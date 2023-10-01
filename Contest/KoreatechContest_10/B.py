@@ -8,8 +8,8 @@ def getFlipCount(a:int,b:int,c:int)->int:
     cnt = 0
     #정수의 최대 크기를 고려
     for i in range(0,32):
-        pos = 1 << i #시프트로 비트 위치를 맞춤
-        tmp = c & pos
+        pos = 1 << i # ** 시프트로 비트 위치를 맞춤 **
+        tmp = c & pos # 우주에서 보낸 신호의 i번째 자리의 값 => 0 or 1
         if tmp == 0:
             if a & pos :
                 cnt += 1

@@ -17,7 +17,7 @@ for _ in range(int(input())):
     used = 0 #직접 일한 시간
     idx = B #현재pos
 
-    #외주 일단 다 맡김
+    #일단 다 부탁함
     for i in range(B):
         heapq.heappush(bootak, works[i])
 
@@ -25,16 +25,20 @@ for _ in range(int(input())):
         #직접한 일이 있으면
         if myOwn :
             used += works[idx]
-            biggest = -1 * heapq.heappushpop(myOwn,-works[idx])
+            
             #최대힙 사용법을 유의
-            used -= biggest
             #직접한 일 중에 가장 오래 걸리는 일을 빼냄
+            biggest = -1 * heapq.heappushpop(myOwn,-works[idx])
+            used -= biggest
+
+        #아직 직접한 일이 없을 때
         else :
             biggest = works[idx]
 
-        #위에 biggest를 부탁힙 에 넣었다 빼서 가장 짧은 일을 꺼냄
+        #위에 biggest를 부탁에 포함해서 가장 짧은 일을 찾아냄
         tmp = heapq.heappushpop(bootak,biggest)
-        #가장 짧게 걸리는 일을 직접할 일에 추가함
+
+        #가장 짧은 일은 직접 함 -> myOwn에 삽입, 사용 시간에 추가
         heapq.heappush(myOwn, -tmp)
         used += tmp
 
