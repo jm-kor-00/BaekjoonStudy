@@ -40,9 +40,9 @@ for _ in range(int(input())):
             else :
                 busDict[el] = [i]
 
-    # print(line)
-    # print(busDict)
-    # print(visited)
+    print(line)
+    print(busDict)
+    print(visited)
 
     #출발도착 일치
     if start == dest :

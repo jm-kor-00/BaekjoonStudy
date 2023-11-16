@@ -23,6 +23,8 @@ def DP(town:list):
     # for row in memo :
     #     print(el)
 
+    print(memo)
+
     #승리조건 : 마을의 정신력이 0 이상
     return memo[0][N-1] >= 0
 
