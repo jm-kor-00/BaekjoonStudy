@@ -29,20 +29,12 @@ def solution(dice):
                 else :
                     tmp[dice[dn-1][i]] = 1   
             set_2_dice.append(tmp)
+        
+        res_1 = {}
+        for dic in set_1_dice:
+            for point in dic.keys():
+                point
             
-        for comb1 in product(set_1_dice[i].keys(), repeat = len(set_1)):     
-            res_1 = {}
-            for i in range(len(set_1)):
-                tmp_1 += dice[set_1[i]-1][comb1[i]]
-            for comb2 in product(range(len(set_1_dice[i])), repeat = len(set_2)):
-                tmp_2 = 0
-                for j in range(len(set_2)):
-                    tmp_2 += dice[set_2[j]-1][comb2[j]]
-                    
-                if tmp_1 > tmp_2 : 
-                    win_1 += 1
-                elif tmp_2 > tmp_1 :
-                    win_2 += 1
         
         if win_1 > MAX : 
             best = set_1

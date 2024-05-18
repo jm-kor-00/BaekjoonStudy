@@ -1,2 +1,2 @@
-arr = [1,2,3,4]
-print(int(arr))
+L = list(input().split())
+print(L)
