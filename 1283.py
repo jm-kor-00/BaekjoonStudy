@@ -34,8 +34,7 @@ def dijkstra(V,graph,S):
     #distance배열 반환
     return distance
     
-V, E = map(int,input().split())
-K = int(input())
+V, E, X = map(int,input().split())
 
 graph = [[]for _ in range(V+1)]
 
@@ -44,6 +43,6 @@ for _ in range(E):
     #graph[u]에는 u에서 갈 수 있는 모든 간선(도착점,비용) 저장
     graph[u].append((v,w))
 
-result = dijkstra(V,graph,K) #result에는 리스트형태로 각 노드까지의 최소비용
+result = dijkstra(V,graph,X) #result에는 리스트형태로 각 노드까지의 최소비용
 for i in range(1,V+1):
     print(result[i] if result[i] != INF else "INF")

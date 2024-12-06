@@ -2,36 +2,50 @@ import sys
 from collections import deque
 input = sys.stdin.readline
 
-#bfs 로 섬 만들고 걔네들끼리 평균치 내리기
-#섬이 만들어지면 moved = True
-# while moved == False
-    
-def BFS(visited,Board,S):
-    que = deque()
-    que.append(S)
-    while que :
-        x,y = que.popleft()
-        for i in range(4):
-            que.append((r,c))
-                while que :
-                    x,y = que.popleft()
-                    for i in range(4):
-                        tx,ty = x + dx[i], y + dy[i]
+N, M = map(int,input().split())
+town = []
+for _ in range(N):
+    town.append(list(map(int,input().split())))
 
-def solution():
-    N, L, R = map(int,input().split())
-    dx = [1,-1,0,0]
-    dy = [0,0,1,-1]
-    Board = []
-    for _ in range(N):
-        Board.append(list(map(int, input().split())))
+chicken = []
+house = []
 
-    moved = False
-    while moved == False:
-        visited = [[False for _ in range(N)] for _ in range(N)]
-        que = deque()
-        for r in range(N):
-            for c in range(N):
-                if visited[r][c] :
-                    continue
-                        
+for i in range(N):
+    for j in range(N):
+        if town[i][j] == 1:
+            house.append((i,j))
+        elif town[i][j] == 2:
+            chicken.append((i,j))
+
+def chi_dis(chs,house):
+    total = 0
+    for h in house:
+        dis = 100
+        hx,hy = h
+        for c in chs:
+            cx,cy = c
+            tmp = abs(hy-cy) + abs(hx-cx)
+            dis = min(tmp,dis)
+        total += dis
+    return total
+
+MIN = float('INF')
+SET = set(chicken)
+
+def recur(pos,cnt):
+    global MIN, SET, M, chicken
+    if cnt == M:
+        MIN = min(chi_dis(SET,house),MIN)
+        return
+    if cnt - (len(chicken) - pos + 1) > M or pos >= len(chicken):
+        return
+    if cnt > 0 :
+        if chi_dis(SET,house) > MIN :
+            return
+    SET.remove(chicken[pos])
+    recur(pos+1,cnt-1)
+    SET.add(chicken[pos])
+    recur(pos+1,cnt)
+
+recur(0,len(chicken))
+print(MIN)
